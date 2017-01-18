@@ -9,9 +9,31 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var collectionContainer: UIView!
+    var studentCollectionViewController : StudentCollectionViewController
     
-    //@IBOutlet weak var detailDescriptionLabel: UILabel!
+   // @IBOutlet weak var detailDescriptionLabel: UILabel!
     
+    //from github.com/codepath/ios_guides/wiki/Container-View-Controllers-Quickstart
+    private var activeViewController: UIViewController? {
+        didSet {
+            updateActiveViewController()
+        }
+    }
+
+    //from github.com/codepath/ios_guides/wiki/Container-View-Controllers-Quickstart
+    private func updateActiveViewController() {
+        if let activeVC = activeViewController {
+            // call before adding child view controller's view as subview
+            addChildViewController(activeVC)
+            
+            activeVC.view.frame = collectionContainer.bounds
+            collectionContainer.addSubview(activeVC.view)
+            
+            // call before adding child view controller's view as subview
+            activeVC.didMove(toParentViewController: self)
+        }
+    }
     
     func configureView() {
         // Update the user interface for the detail item.
@@ -25,6 +47,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        activeViewController = studentCollectionViewController
         self.configureView()
     }
     

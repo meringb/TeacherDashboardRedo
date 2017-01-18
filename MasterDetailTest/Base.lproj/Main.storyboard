@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="han-LH-PCl">
-                                <frame key="frameInset" height="705.5" maxY="8.5"/>
+                                <frame key="frameInset" minX="-0.5" height="705.5" maxY="8.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="dxC-h7-Vba" kind="embed" id="rWC-iN-bIe"/>
@@ -46,6 +46,9 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Students" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="collectionContainer" destination="han-LH-PCl" id="dZV-h9-bHu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,7 +59,7 @@
             <objects>
                 <collectionViewController id="dxC-h7-Vba" customClass="StudentCollectionViewController" customModule="MasterDetailTest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gTD-Yu-Tsa">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="705.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="705.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Tq-J5-bsf">
@@ -82,6 +85,7 @@
                                         </label>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.049691020333036739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="studentNameLabel" destination="FtI-zF-BFK" id="lV0-8j-qsR"/>
                                 </connections>

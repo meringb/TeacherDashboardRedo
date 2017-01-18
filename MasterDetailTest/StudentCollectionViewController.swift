@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "CollectionCell"
 
 class StudentCollectionViewController: UICollectionViewController {
     
@@ -19,12 +19,12 @@ class StudentCollectionViewController: UICollectionViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
         // Register cell classes
         self.collectionView!.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
         
         // Do any additional setup after loading the view.
-        loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,8 +51,9 @@ class StudentCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return self.students.count
+//        // #warning Incomplete implementation, return the number of items
+//        return self.students.count
+        return 10
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> StudentCollectionViewCell {
@@ -71,6 +72,7 @@ class StudentCollectionViewController: UICollectionViewController {
         
         students = studentList
     }
+    
 
     // MARK: UICollectionViewDelegate
 
