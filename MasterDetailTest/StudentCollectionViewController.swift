@@ -21,7 +21,7 @@ class StudentCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
         
         // Do any additional setup after loading the view.
         loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
@@ -55,12 +55,12 @@ class StudentCollectionViewController: UICollectionViewController {
         return self.students.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StudentCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> StudentCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! StudentCollectionViewCell
         
         let student = self.students[indexPath.row]
         //cell.textLabel?.text = student.getName
-        cell.textLabel?.text = student
+        cell.studentNameLabel?.text = student
     
         // Configure the cell
     

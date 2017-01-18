@@ -9,16 +9,18 @@
 import UIKit
 
 class StudentCollectionViewCell: UICollectionViewCell {
-    var textLabel: UILabel!
+    @IBOutlet weak var studentNameLabel: UILabel!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        textLabel.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
-        textLabel.textAlignment = .center
-        contentView.addSubview(textLabel)
-    }
+    //var textLabel: UILabel!
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        studentNameLabel.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
+//        studentNameLabel.textAlignment = .center
+//        contentView.addSubview(studentNameLabel)
+//    }
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }
