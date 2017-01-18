@@ -8,19 +8,40 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+//private let reuseIdentifier = "Cell"
 
-class DetailViewController: UICollectionViewController {
 
-   var students = [String]()
+
+class DetailViewController: UIViewController  {
+    
+    var studentCollectionViewController = StudentCollectionViewController()
+   
+    
+    //var students = [String]()
+    
+//    private lazy var detailViewController: StudentCollectionViewController = {
+//        // Load Collection
+//        let collection = StudentCollectionViewController.self
+//        
+//        // Instantiate View Controller
+//        var collectionViewController = StudentCollectionViewController.self
+//        
+//        // Add View Controller as Child View Controller
+//        self.add(asChildViewController: collectionViewController)
+//        
+//        return collectionViewController
+//    }()
     
     func configureView() {
         // Update the user interface for the detail item.
 //        if let detail = self.detailItem {
+//            if let collection = self.studentCollection{
+//                loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
+//            }
 //            if let label = self.detailDescriptionLabel {
 //                label.text = detail.description
 //            }
-//        }
+        }
     }
 
     override func viewDidLoad() {
@@ -32,9 +53,12 @@ class DetailViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         // Register cell classes
-        self.collectionView!.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
+//        self.collectionView!.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        
+//        loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
+        self.addChildViewController(studentCollectionViewController)
+        view.addSubview(yourViewController.view)
+        yourViewController.didMove(toParentViewController: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,34 +85,34 @@ class DetailViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
+
     
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return self.students.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StudentCollectionViewCell
-        
-        let student = self.students[indexPath.row]
-        //cell.textLabel?.text = student.getName
-        cell.textLabel?.text = student
-        
-        // Configure the cell
-        
-        return cell
-    }
-    
-    func loadSampleStudents(studentList: [String]) {
-        
-        students = studentList
-    }
-    
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of items
+//        return self.students.count
+//    }
+//
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StudentCollectionViewCell
+//        
+//        let student = self.students[indexPath.row]
+//        //cell.textLabel?.text = student.getName
+//        cell.textLabel?.text = student
+//        
+//        // Configure the cell
+//        
+//        return cell
+//    }
+
+//    func loadSampleStudents(studentList: [String]) {
+//        
+//        students = studentList
+//    }
+
     // MARK: UICollectionViewDelegate
     
     /*
