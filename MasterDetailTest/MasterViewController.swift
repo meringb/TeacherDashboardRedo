@@ -12,6 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
+    var classrooms = [String]()
 
 
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        loadSampleClassrooms(classroomList: ["Onion", "Vinegar", "Nettles", "Nyan Cat"])
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,14 +66,18 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return self.classrooms.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+//        let object = objects[indexPath.row] as! NSDate
+//        cell.textLabel!.text = object.description
+//        return cell
+        let classroom = self.classrooms[indexPath.row]
+        //cell.textLabel?.text = student.getName
+        cell.textLabel?.text = classroom
         return cell
     }
 
@@ -88,7 +94,10 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
+    func loadSampleClassrooms(classroomList: [String]) {
+        
+        classrooms = classroomList
+    }
 
 }
 
