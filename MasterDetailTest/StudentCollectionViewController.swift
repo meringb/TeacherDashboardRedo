@@ -8,11 +8,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "CollectionCell"
+//private let reuseIdentifier = "CollectionCell"
 
 class StudentCollectionViewController: UICollectionViewController {
     
+    @IBOutlet var StudentCollection: UICollectionView!
     var students = [String]()
+    //var thisImage = UIImage(named: "Apple_Swift_Logo")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,7 @@ class StudentCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
         loadSampleStudents(studentList: ["Tiff", "Josh", "Melissa", "Jenner", "Ray", "Sarah"])
         // Register cell classes
-        self.collectionView!.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
+       // self.collectionView!.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
         
         // Do any additional setup after loading the view.
         
@@ -52,16 +54,22 @@ class StudentCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of items
-//        return self.students.count
-        return 10
+        return self.students.count
+        //return 10
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> StudentCollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! StudentCollectionViewCell
         
         let student = self.students[indexPath.row]
+        //let student = self.students[1]
+        //cell.backgroundColor = UIColor.red
+        
         //cell.textLabel?.text = student.getName
-        cell.studentNameLabel?.text = student
+        cell.nameLabel.text = student
+        //cell.studentNameLabel?.text = "HI"
+        //cell.nameLabel.text = "HFXHGFGHCG"
+        //cell.myImage.image = thisImage
     
         // Configure the cell
     

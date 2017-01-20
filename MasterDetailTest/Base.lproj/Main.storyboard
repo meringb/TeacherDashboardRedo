@@ -35,10 +35,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="han-LH-PCl">
-                                <frame key="frameInset" minX="-0.5" height="705.5" maxY="8.5"/>
+                                <frame key="frameInset" minX="-1" height="701.5" maxX="3.5" maxY="15"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="dxC-h7-Vba" kind="embed" id="rWC-iN-bIe"/>
+                                    <segue destination="dxC-h7-Vba" kind="embed" id="235-kh-IYz"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -46,9 +46,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Students" id="mOI-FS-AaM"/>
-                    <connections>
-                        <outlet property="collectionContainer" destination="han-LH-PCl" id="dZV-h9-bHu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +56,7 @@
             <objects>
                 <collectionViewController id="dxC-h7-Vba" customClass="StudentCollectionViewController" customModule="MasterDetailTest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gTD-Yu-Tsa">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="705.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700.5" height="701.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Tq-J5-bsf">
@@ -76,8 +73,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="194" height="166"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtI-zF-BFK">
-                                            <frame key="frameInset" minX="76" minY="73" width="118" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HI!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-L7-HLG">
+                                            <frame key="frameInset" minX="49" minY="63" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -87,7 +84,7 @@
                                 </view>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.049691020333036739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="studentNameLabel" destination="FtI-zF-BFK" id="lV0-8j-qsR"/>
+                                    <outlet property="nameLabel" destination="4d8-L7-HLG" id="fp2-fG-50K"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -96,10 +93,13 @@
                             <outlet property="delegate" destination="dxC-h7-Vba" id="OFk-Yy-OkV"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="StudentCollection" destination="gTD-Yu-Tsa" id="sac-kY-M5k"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJU-fp-0yE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1355.56640625" y="177.1484375"/>
+            <point key="canvasLocation" x="1452.099609375" y="168.5546875"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
